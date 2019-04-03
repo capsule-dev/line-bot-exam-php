@@ -29,7 +29,7 @@
         $arrayPostData['messages'][0]['text'] = "หน้าตาดีมากเลยจ้า";
         replyMsg($arrayHeader,$arrayPostData);
     }
-     else if($message == "พี่เติ้ล"){
+     else if($message == "พี่ปราย"){
              $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
              $arrayPostData['messages'][0]['type'] = "text";
              $arrayPostData['messages'][0]['text'] = "ม้าชัด ๆ มาได้ไง";
