@@ -48,14 +48,14 @@
 
 $thaiKey = array('ๅ', '+', '/', '๑', '-', '๒', 'ภ', '๓', 'ถ', '๔', 'ุ', 'ู', 'ึ', '฿', 'ค', '๕', 'ต', '๖', 'จ', '๗', 'ข', '๘', 'ช', '๙', 'ฃ', 'ฅ', 'ๆ', '๐', 'ไ', '"', 'ำ', 'ฎ', 'พ', 'ฑ', 'ะ', 'ธ', 'ั', 'ํ', 'ี', '๊', 'ร', 'ณ', 'น', 'ฯ', 'ย', 'ญ', 'บ', 'ฐ', 'ล', ',', 'ฟ', 'ฤ', 'ห', 'ฆ', 'ก', 'ฏ', 'ด', 'โ', 'เ', 'ฌ', '้', '็', '่', '๋', 'า', 'ษ', 'ส', 'ศ', 'ว', 'ซ', 'ง', '.', 'ผ', '(', 'ป', ')', 'แ', 'ฉ', 'อ', 'ฮ', 'ิ', 'ฺ', 'ื', '์', 'ท', '?', 'ม', 'ฒ', 'ใ', 'ฬ', 'ฝ', 'ฦ');
 $engKey = array('1', '!', '2', '@', '3', '#', '4', '$', '5', '%', '6', '^', '7', '&', '8', '*', '9', '(', '0', ')', '-', '_', '=', '+', '\\', '|', 'q', 'Q', 'w', 'W', 'e', 'E', 'r', 'R', 't', 'T', 'y', 'Y', 'u', 'U', 'i', 'I', 'o', 'O', 'p', 'P', '[', '{', ']', '}', 'a', 'A', 's', 'S', 'd', 'D', 'f', 'F', 'g', 'G', 'h', 'H', 'j', 'J', 'k', 'K', 'l', 'L', ';', ':', '\'', '"', 'z', 'Z', 'x', 'X', 'c', 'C', 'v', 'V', 'b', 'B', 'n', 'N', 'm', 'M', ',', '<', '.', '>', '/', '?');
-
+$message_arr = str_split($message, 1);
 $result = "";
-	if(preg_match('/^[a-z]+$/i',$message)){ 
-		for ($i=0; $i < count($message) ; $i++) { 
-			if (array_search($message[$i],$engKey) != -1) {
-		        $result += $thaiKey[array_search($message[$i],$engKey)];
+	if(preg_match('/^[a-z]+$/i',$message_arr)){ 
+		for ($i=0; $i < count($message_arr) ; $i++) { 
+			if (array_search($message_arr[$i],$engKey) != -1) {
+		        $result += $thaiKey[array_search($message_arr[$i],$engKey)];
 		      }else{
-		        $result += $message[$i];
+		        $result += $message_arr[$i];
 		      }
 		}
 		$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
