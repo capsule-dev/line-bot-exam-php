@@ -13,13 +13,34 @@
     //รับข้อความจากผู้ใช้
     $message = $arrayJson['events'][0]['message']['text'];
     $result = "";
-    echo $message;
-	$message_arr = str_split($message, 1);
 
-        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = print_r($message_arr);
-        replyMsg($arrayHeader,$arrayPostData);
+
+	if(preg_match('/^[a-z]+$/i',$message)){ 
+
+		$message_arr = str_split($message, 1);
+		for ($i=0; $i < count($message_arr) ; $i++) { 
+
+			// if (array_search($message_arr[$i],$engKey) != -1) {
+		 //        $result += $thaiKey[array_search($message_arr[$i],$engKey)];
+		 //      }else{
+		 //        $result += $message_arr[$i];
+		 //      }
+
+		    $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+	        $arrayPostData['messages'][0]['type'] = "text";
+	        $arrayPostData['messages'][0]['text'] = array_search($message_arr[$i],$engKey);
+	        replyMsg($arrayHeader,$arrayPostData);
+
+		}
+
+        // $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        // $arrayPostData['messages'][0]['type'] = "text";
+        // $arrayPostData['messages'][0]['text'] = print_r($message_arr);
+        // replyMsg($arrayHeader,$arrayPostData);
+
+
+	}
+
 
 
 		
