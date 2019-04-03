@@ -28,5 +28,7 @@
         $arrayPostData['messages'][0]['packageId'] = "2";
         $arrayPostData['messages'][0]['stickerId'] = "46";
         replyMsg($arrayHeader,$arrayPostData);
-    }
+    }else{
+     replyMsg($arrayHeader,"----");
+     }
 ?>
