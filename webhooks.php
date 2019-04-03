@@ -50,6 +50,12 @@ $thaiKey = array('ๅ', '+', '/', '๑', '-', '๒', 'ภ', '๓', 'ถ', '๔',
 $engKey = array('1', '!', '2', '@', '3', '#', '4', '$', '5', '%', '6', '^', '7', '&', '8', '*', '9', '(', '0', ')', '-', '_', '=', '+', '\\', '|', 'q', 'Q', 'w', 'W', 'e', 'E', 'r', 'R', 't', 'T', 'y', 'Y', 'u', 'U', 'i', 'I', 'o', 'O', 'p', 'P', '[', '{', ']', '}', 'a', 'A', 's', 'S', 'd', 'D', 'f', 'F', 'g', 'G', 'h', 'H', 'j', 'J', 'k', 'K', 'l', 'L', ';', ':', '\'', '"', 'z', 'Z', 'x', 'X', 'c', 'C', 'v', 'V', 'b', 'B', 'n', 'N', 'm', 'M', ',', '<', '.', '>', '/', '?');
 $message_arr = str_split($message, 1);
 $result = "";
+
+$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+$arrayPostData['messages'][0]['type'] = "text";
+$arrayPostData['messages'][0]['text'] = $message_arr;
+replyMsg($arrayHeader,$arrayPostData);
+
 	if(preg_match('/^[a-z]+$/i',$message_arr)){ 
 		for ($i=0; $i < count($message_arr) ; $i++) { 
 			if (array_search($message_arr[$i],$engKey) != -1) {
