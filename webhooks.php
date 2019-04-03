@@ -16,7 +16,12 @@
     echo $message;
 	$message_arr = str_split($message, 1);
 
-    print_r($message_arr);
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = print_r($message_arr);
+        replyMsg($arrayHeader,$arrayPostData);
+
+
 		
 	#ตัวอย่าง Message Type "Text"
     // if($message == "สวัสดี"){
@@ -47,19 +52,19 @@
     // }
 
 
-	if(preg_match('/^[a-z]+$/i',$message_arr)){ 
-		for ($i=0; $i < count($message_arr) ; $i++) { 
-			if (array_search($message_arr[$i],$engKey) != -1) {
-		        $result += $thaiKey[array_search($message_arr[$i],$engKey)];
-		      }else{
-		        $result += $message_arr[$i];
-		      }
-		}
-		$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = $result;
-		replyMsg($arrayHeader,$arrayPostData);
-	}
+	// if(preg_match('/^[a-z]+$/i',$message_arr)){ 
+	// 	for ($i=0; $i < count($message_arr) ; $i++) { 
+	// 		if (array_search($message_arr[$i],$engKey) != -1) {
+	// 	        $result += $thaiKey[array_search($message_arr[$i],$engKey)];
+	// 	      }else{
+	// 	        $result += $message_arr[$i];
+	// 	      }
+	// 	}
+	// 	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+ //        $arrayPostData['messages'][0]['type'] = "text";
+ //        $arrayPostData['messages'][0]['text'] = $result;
+	// 	replyMsg($arrayHeader,$arrayPostData);
+	// }
     
     function replyMsg($arrayHeader,$arrayPostData){
         $strUrl = "https://api.line.me/v2/bot/message/reply";
