@@ -21,9 +21,9 @@
 		for ($i=0; $i < count($message_arr) ; $i++) { 
 
 			if (array_search($message_arr[$i],$engKey) != -1) {
-		        $result += $thaiKey[array_search($message_arr[$i],$engKey)];
+		        $result .= $thaiKey[array_search($message_arr[$i],$engKey)];
 		      }else{
-		        $result += $message_arr[$i];
+		        $result .= $message_arr[$i];
 		      }
 
 		}
