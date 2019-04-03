@@ -30,7 +30,7 @@
 
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = print_r($message_arr);
+        $arrayPostData['messages'][0]['text'] = $result;
         replyMsg($arrayHeader,$arrayPostData);
 
 
