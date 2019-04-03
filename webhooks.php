@@ -23,6 +23,20 @@
         $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
         replyMsg($arrayHeader,$arrayPostData);
     }
+     else if($message == "พี่เติ้ล"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "หน้าตาดีมากเลยจ้า";
+        replyMsg($arrayHeader,$arrayPostData);
+    }
+     else if($message == "พี่เติ้ล"){
+             $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+             $arrayPostData['messages'][0]['type'] = "text";
+             $arrayPostData['messages'][0]['text'] = "ม้าชัด ๆ มาได้ไง";
+             replyMsg($arrayHeader,$arrayPostData);
+         }
+
+
     #ตัวอย่าง Message Type "Sticker"
     else if($message == "ฝันดี"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
@@ -31,6 +45,7 @@
         $arrayPostData['messages'][0]['stickerId'] = "46";
         replyMsg($arrayHeader,$arrayPostData);
     }
+
 
     
 
