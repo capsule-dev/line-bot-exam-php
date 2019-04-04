@@ -15,7 +15,7 @@
     $result = "";
 
 
-	if(preg_match('/^[A-Za-z0-9 .\-]+$/i',$message)){ 
+	if(preg_match('/([A-Za-z -]+)?\s?\[?\(?:([A-Za-z0-9\-\_]+)\)?\]?/',$message)){ 
 
 		$message_arr = str_split($message, 1);
 		for ($i=0; $i < count($message_arr) ; $i++) { 
