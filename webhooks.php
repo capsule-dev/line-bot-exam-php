@@ -96,3 +96,4 @@
         curl_close ($ch);
     }	
 
+echo "ok";
