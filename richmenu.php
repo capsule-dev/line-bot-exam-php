@@ -102,8 +102,23 @@ EOF;
 
 function uploadImageRichmenu($channelAccessToken){
 
- 
-    echo "ss";
+  $menu_id = createNewRichmenu($channelAccessToken)
+
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, "https://api.line.me/v2/bot/richmenu/$menu_id/content");
+  curl_setopt($ch, CURLOPT_POST, true);
+  curl_setopt($ch, CURLOPT_POSTFIELDS,file_get_contents(realpath("image.jpg")));
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  $headers = ["Authorization: Bearer $channelAccessToken"];
+  $headers = ["Content-Type: image/jpeg"];
+  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+  $result = curl_exec($ch);
+  if (curl_errno($ch)) {
+      \Log::info('Error:' . curl_error($ch));
+  }
+  curl_close ($ch);
+
+
 }
 
 function getListOfRichmenu($channelAccessToken) {
