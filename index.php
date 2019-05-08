@@ -18,15 +18,15 @@
         replyMsg($arrayHeader,$arrayPostData);
     }
     #ตัวอย่าง Message Type "Sticker"
-    else if($message == "ฝันดี"){
-        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = "sticker";
-        $arrayPostData['messages'][0]['packageId'] = "2";
-        $arrayPostData['messages'][0]['stickerId'] = "46";
-        replyMsg($arrayHeader,$arrayPostData);
-    }else{
-     replyMsg($arrayHeader,"----");
-     }
+    // else if($message == "ฝันดี"){
+    //     $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+    //     $arrayPostData['messages'][0]['type'] = "sticker";
+    //     $arrayPostData['messages'][0]['packageId'] = "2";
+    //     $arrayPostData['messages'][0]['stickerId'] = "46";
+    //     replyMsg($arrayHeader,$arrayPostData);
+    // }else{
+    //  replyMsg($arrayHeader,"----");
+    //  }
 
 
 ?>
