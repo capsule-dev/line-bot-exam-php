@@ -37,9 +37,10 @@
         $arrayPostData['messages'][0]['text'] = "เกมส์";
         replyMsg($arrayHeader,$arrayPostData);
     } elseif($message == "Next"){
+        $richid =  file_get_contents("http://api.alarabiya.net/sections/2/");
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "เดี่ยวจะทำเปลี่ยน Rich Menu";
+        $arrayPostData['messages'][0]['text'] = "เดี่ยวจะทำเปลี่ยน Rich Menu"."Rich Id : ".$richid;
         replyMsg($arrayHeader,$arrayPostData);
     }
     #ตัวอย่าง Message Type "Sticker"
