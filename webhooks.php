@@ -37,7 +37,7 @@
         $arrayPostData['messages'][0]['text'] = "เกมส์";
         replyMsg($arrayHeader,$arrayPostData);
     } elseif($message == "Next"){
-        $richid =  file_get_contents("http://api.alarabiya.net/sections/2/");
+        $richid =  file_get_contents("https://linebot-pimpid.herokuapp.com/richmenu.php");
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "เดี่ยวจะทำเปลี่ยน Rich Menu"."Rich Id : ".$richid;
