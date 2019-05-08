@@ -40,7 +40,7 @@
         $richid =  file_get_contents("https://linebot-pimpid.herokuapp.com/richmenu.php");
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "เดี่ยวจะทำเปลี่ยน Rich Menu"."Rich Id : ".$richid;
+        $arrayPostData['messages'][0]['text'] = "เดี่ยวจะทำเปลี่ยน Rich Menu"." Rich Id : ".$richid;
         replyMsg($arrayHeader,$arrayPostData);
     }
     #ตัวอย่าง Message Type "Sticker"
