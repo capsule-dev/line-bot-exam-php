@@ -102,7 +102,7 @@ EOF;
 
 function uploadImageRichmenu($channelAccessToken){
 
-    $urlWithoutProtocol = "api.line.me/v2/bot/richmenu/{getListOfRichmenu($channelAccessToken)}/content";
+    $urlWithoutProtocol = "api.line.me/v2/bot/richmenu/{createNewRichmenu($channelAccessToken)}/content";
     $request         = "";
     $isRequestHeader = false;
  
