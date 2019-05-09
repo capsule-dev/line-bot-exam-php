@@ -9,11 +9,10 @@ $request->setUrl('https://api.line.me/v2/bot/richmenu');
 $request->setMethod(HTTP_METH_POST);
 
 $request->setHeaders(array(
-  'cache-control' => 'no-cache',
-  // 'Connection' => 'keep-alive',
+  'Connection' => 'keep-alive',
   // 'content-length' => '357',
   // 'accept-encoding' => 'gzip, deflate',
-  // 'Host' => 'api.line.me',
+  'Host' => 'api.line.me',
   // 'Postman-Token' => 'c2111d0b-b6fe-47eb-b1ca-e748b4b01c89,bc0df712-426e-44f1-b185-ec9514bcaa5e',
   // 'Cache-Control' => 'no-cache',
   // 'Accept' => '*/*',
