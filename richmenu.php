@@ -1,8 +1,8 @@
 <?php 
-$channelAccessToken = "2tNAlMM4y3Rmj/BDGr7td82eUqUtj9dqQSobtPF/fDjGjm6G3ExSzbFX+GHbCoCYgb4l0Gg93j60hvPmi80bkXZJkypC9prbhEsJOBakNePZ6oaEj8rbbGeDfL+aW3SfgLOpnr8KVFhThk/pdY51XAdB04t89/1O/w1cDnyilFU=";//copy Channel access token ตอนที่ตั้งค่ามาใส่
- createNewRichmenu($channelAccessToken);
+// $channelAccessToken = "2tNAlMM4y3Rmj/BDGr7td82eUqUtj9dqQSobtPF/fDjGjm6G3ExSzbFX+GHbCoCYgb4l0Gg93j60hvPmi80bkXZJkypC9prbhEsJOBakNePZ6oaEj8rbbGeDfL+aW3SfgLOpnr8KVFhThk/pdY51XAdB04t89/1O/w1cDnyilFU=";//copy Channel access token ตอนที่ตั้งค่ามาใส่
+ createNewRichmenu();
 
-function createNewRichmenu($channelAccessToken) {
+function createNewRichmenu() {
 
 $request = new HttpRequest();
 $request->setUrl('https://api.line.me/v2/bot/richmenu');
@@ -18,7 +18,7 @@ $request->setHeaders(array(
   // 'Cache-Control' => 'no-cache',
   // 'Accept' => '*/*',
   // 'User-Agent' => 'PostmanRuntime/7.11.0',
-  'Authorization' => 'Bearer $channelAccessToken',
+  'Authorization' => "Bearer 2tNAlMM4y3Rmj/BDGr7td82eUqUtj9dqQSobtPF/fDjGjm6G3ExSzbFX+GHbCoCYgb4l0Gg93j60hvPmi80bkXZJkypC9prbhEsJOBakNePZ6oaEj8rbbGeDfL+aW3SfgLOpnr8KVFhThk/pdY51XAdB04t89/1O/w1cDnyilFU=",
   'Content-Type' => 'application/json'
 ));
 
