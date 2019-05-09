@@ -14,9 +14,8 @@
     if($message == "Message"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "ข้อความ";
+        // $arrayPostData['messages'][0]['text'] = "ข้อความ";
         $arrayPostData['messages'][0]['text'] = $arrayJson['events'][0]['source']['userId'];
-        userId
         replyMsg($arrayHeader,$arrayPostData);
     } elseif($message == "Read"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
