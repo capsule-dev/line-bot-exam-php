@@ -40,10 +40,10 @@
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "เดี่ยวจะทำเปลี่ยน Rich Menu เป็น Rich Menu 2";
-        // $arrayJson['events'][0]['source']['userId'];
+        $user_id = $arrayJson['events'][0]['source']['userId'];
         $curl = curl_init();
         curl_setopt_array($curl, array(
-        CURLOPT_URL => "https://api.line.me/v2/bot/user/$arrayJson['events'][0]['source']['userId']/richmenu/richmenu-e8ca8c5e1d834e96a4942a6de99ff2ae",
+        CURLOPT_URL => "https://api.line.me/v2/bot/user/$user_id/richmenu/richmenu-e8ca8c5e1d834e96a4942a6de99ff2ae",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
@@ -56,15 +56,19 @@
         ),
       ));
         $response = curl_exec($curl);
+        $err = curl_error($curl);
+        
         replyMsg($arrayHeader,$arrayPostData);
+
     }elseif($message == "Previous"){
+
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "เดี่ยวจะทำเปลี่ยน Rich Menu เป็น Rich Menu 1";
-        // $arrayJson['events'][0]['source']['userId'];
+        $user_id = $arrayJson['events'][0]['source']['userId'];
         $curl = curl_init();
         curl_setopt_array($curl, array(
-        CURLOPT_URL => "https://api.line.me/v2/bot/user/$arrayJson['events'][0]['source']['userId']/richmenu/richmenu-ec7d14b99b6cfecc976f21effe23a675",
+        CURLOPT_URL => "https://api.line.me/v2/bot/user/$user_id/richmenu/richmenu-ec7d14b99b6cfecc976f21effe23a675",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
@@ -77,6 +81,9 @@
         ),
       ));
         $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+curl_close($curl);
         replyMsg($arrayHeader,$arrayPostData);
     }
     #ตัวอย่าง Message Type "Sticker"
