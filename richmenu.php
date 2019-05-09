@@ -1,27 +1,11 @@
 <?php 
-// $channelAccessToken = "2tNAlMM4y3Rmj/BDGr7td82eUqUtj9dqQSobtPF/fDjGjm6G3ExSzbFX+GHbCoCYgb4l0Gg93j60hvPmi80bkXZJkypC9prbhEsJOBakNePZ6oaEj8rbbGeDfL+aW3SfgLOpnr8KVFhThk/pdY51XAdB04t89/1O/w1cDnyilFU=";//copy Channel access token ตอนที่ตั้งค่ามาใส่
- createNewRichmenu();
+$channelAccessToken = "2tNAlMM4y3Rmj/BDGr7td82eUqUtj9dqQSobtPF/fDjGjm6G3ExSzbFX+GHbCoCYgb4l0Gg93j60hvPmi80bkXZJkypC9prbhEsJOBakNePZ6oaEj8rbbGeDfL+aW3SfgLOpnr8KVFhThk/pdY51XAdB04t89/1O/w1cDnyilFU=";//copy Channel access token ตอนที่ตั้งค่ามาใส่
+ createNewRichmenu($channelAccessToken);
 
-function createNewRichmenu() {
+function createNewRichmenu($channelAccessToken) {
 
-$request = new HttpRequest();
-$request->setUrl('https://api.line.me/v2/bot/richmenu');
-$request->setMethod(HTTP_METH_POST);
-
-$request->setHeaders(array(
-  'Connection' => 'keep-alive',
-  // 'content-length' => '357',
-  // 'accept-encoding' => 'gzip, deflate',
-  'Host' => 'api.line.me',
-  // 'Postman-Token' => 'c2111d0b-b6fe-47eb-b1ca-e748b4b01c89,bc0df712-426e-44f1-b185-ec9514bcaa5e',
-  // 'Cache-Control' => 'no-cache',
-  // 'Accept' => '*/*',
-  // 'User-Agent' => 'PostmanRuntime/7.11.0',
-  'Authorization' => "Bearer 2tNAlMM4y3Rmj/BDGr7td82eUqUtj9dqQSobtPF/fDjGjm6G3ExSzbFX+GHbCoCYgb4l0Gg93j60hvPmi80bkXZJkypC9prbhEsJOBakNePZ6oaEj8rbbGeDfL+aW3SfgLOpnr8KVFhThk/pdY51XAdB04t89/1O/w1cDnyilFU=",
-  'Content-Type' => 'application/json'
-));
-
-$request->setBody('{
+  $data = '{
+  
   "size": {
     "width": 2500,
     "height": 1686
@@ -44,18 +28,45 @@ $request->setBody('{
     }
     }
   ]
-}');
+}';
 
-  try {
-    $response = $request->send();
 
-    echo $response->getBody();
-  } catch (HttpException $ex) {
-    echo $ex;
-  }
+      $curl = curl_init();
+
+      curl_setopt_array($curl, array(
+        CURLOPT_URL => "https://api.line.me/v2/bot/richmenu",
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => "",
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 30,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => "POST",
+        CURLOPT_POSTFIELDS => $data,
+        CURLOPT_HTTPHEADER => array(
+          // "Accept: */*",
+          "Authorization: Bearer $channelAccessToken ",
+          // "Cache-Control: no-cache",
+          // "Connection: keep-alive",
+          "Content-Type: application/json",
+          "Host: api.line.me"
+          // "Postman-Token: c2111d0b-b6fe-47eb-b1ca-e748b4b01c89,fdb9c125-c790-4e9a-a4fd-5d7707c7782b",
+          // "User-Agent: PostmanRuntime/7.11.0",
+          // "accept-encoding: gzip, deflate",
+          // "cache-control: no-cache",
+          // "content-length: 357"
+        ),
+      ));
+
+      $response = curl_exec($curl);
+      $err = curl_error($curl);
+      curl_close($curl);
+
+      if ($err) {
+        echo "cURL Error #:" . $err;
+      } else {
+        echo $response;
+      }
 }
-
-
 
 
 
