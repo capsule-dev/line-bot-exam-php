@@ -16,10 +16,15 @@
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "ข้อความ";
         replyMsg($arrayHeader,$arrayPostData);
-    } elseif($message == "Read"){
+    } elseif($message == "up_1"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "อ่าน";
+        $arrayPostData['messages'][0]['type'] = "bubble";
+        $arrayPostData['messages'][0]['direction'] = "ltr";
+        $arrayPostData['messages'][0]['styles']['header']['backgroundColor'] = "#ffaaaa";
+        $arrayPostData['messages'][0]['styles']['body']['backgroundColor'] = "#aaffaa";
+        $arrayPostData['messages'][0]['styles']['body']['separator'] = true;
+        $arrayPostData['messages'][0]['styles']['body']['separatorColor'] = "#efefef";
+        $arrayPostData['messages'][0]['styles']['footer']['backgroundColor'] = "#aaaaff";
         replyMsg($arrayHeader,$arrayPostData);
     } elseif($message == "Book"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
