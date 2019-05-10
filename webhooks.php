@@ -10,7 +10,7 @@
     
     //รับข้อความจากผู้ใช้
     $message = $arrayJson['events'][0]['message']['text'];
-#ตัวอย่าง Message Type "Text"
+#ตัวอย่าง Message Type "Text" '''
     if($message == "Message"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
@@ -20,7 +20,6 @@
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = [$jsonFlex];
-
         $jsonFlex = [
     "type" => "flex",
     "altText" => "Hello Flex Message",
