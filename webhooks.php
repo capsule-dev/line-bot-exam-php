@@ -16,30 +16,30 @@
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "ข้อความ";
         replyMsg($arrayHeader,$arrayPostData);
-    // } elseif($message == "up_1"){
-    //     $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-    //     $arrayPostData['messages'][0]['type'] = "text";
-    //     $jsonFlex = '{
-    //   "type": "flex",
-    //   "altText": "This is a Flex Message",
-    //   "contents": {
-    //     "type": "bubble",
-    //     "body": {
-    //       "type": "box",
-    //       "layout": "horizontal",
-    //       "contents": [
-    //         {
-    //           "type": "text",
-    //           "text": "Hello,"
-    //         },
-    //         {
-    //           "type": "text",
-    //           "text": "World!"
-    //         }'
+    } elseif($message == "up_1"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $jsonFlex = '{
+      "type": "flex",
+      "altText": "This is a Flex Message",
+      "contents": {
+        "type": "bubble",
+        "body": {
+          "type": "box",
+          "layout": "horizontal",
+          "contents": [
+            {
+              "type": "text",
+              "text": "Hello,"
+            },
+            {
+              "type": "text",
+              "text": "World!"
+            }'
 
-    //     $arrayPostData['messages'][0]['text'] = [$jsonFlex];
+        $arrayPostData['messages'][0]['text'] = $jsonFlex;
 
-    //     replyMsg($arrayHeader,$arrayPostData);
+        replyMsg($arrayHeader,$arrayPostData);
     } elseif($message == "right_1"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
