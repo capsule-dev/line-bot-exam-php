@@ -37,7 +37,8 @@
               "text": "World!"
             }'
 
-        $arrayPostData['messages'][0]['text'] = $jsonFlex;
+
+        $arrayPostData['messages'][0]['text'] = json_decode($jsonFlex);
 
         replyMsg($arrayHeader,$arrayPostData);
     } elseif($message == "right_1"){
