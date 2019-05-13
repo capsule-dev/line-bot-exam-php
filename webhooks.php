@@ -40,7 +40,7 @@
         $arrayPostData['messages'][0]['text'] = [$jsonFlex];
 
         replyMsg($arrayHeader,$arrayPostData);
-    } elseif($message == "Book"){
+    } elseif($message == "right_1"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "หนังสือ";
