@@ -49,7 +49,7 @@
         $arrayPostData['messages'][0]['contents']['body']['contents'][1]['layout'] = "vertical";
         $arrayPostData['messages'][0]['contents']['body']['contents'][1]['contents']['type'] = "image";
         $arrayPostData['messages'][0]['contents']['body']['contents'][1]['contents']['url'] = "https://www.linefriends.com/img/img_sec.jpg";
-        $arrayPostData['messages'][0]['contents']['hero']['size']= "full";
+        $arrayPostData['messages'][0]['contents']['body']['contents'][1]['contents']['size']= "full";
 
         $arrayPostData['messages'][0]['contents']['footer']['type'] = "box";
         $arrayPostData['messages'][0]['contents']['footer']['layout'] = "vertical";
