@@ -43,8 +43,8 @@
         $arrayPostData['messages'][0]['contents']['body']['contents'][0]['contents'][0]['type'] = "text";
         $arrayPostData['messages'][0]['contents']['body']['contents'][0]['contents'][0]['text'] = "Body";
 
-        $arrayPostData['messages'][0]['contents']['body']['contents'][0]['contents'][1]['type'] = "text";
-        $arrayPostData['messages'][0]['contents']['body']['contents'][0]['contents'][1]['text'] = "ssssss";
+        $arrayPostData['messages'][0]['contents']['body']['contents'][0]['contents'][1]['type'] = "image";
+        $arrayPostData['messages'][0]['contents']['body']['contents'][0]['contents'][1]['url'] = "https://www.linefriends.com/img/img_sec.jpg";
 
         // $arrayPostData['messages'][0]['contents']['body']['contents'][1]['type'] = "box";
         // $arrayPostData['messages'][0]['contents']['body']['contents'][1]['layout'] = "vertical";
