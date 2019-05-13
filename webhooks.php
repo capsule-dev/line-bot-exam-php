@@ -16,7 +16,7 @@
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "ข้อความ";
         replyMsg($arrayHeader,$arrayPostData);
-        
+
     } elseif($message == "up_1"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "flex";
@@ -43,8 +43,8 @@
 
         $arrayPostData['messages'][0]['contents']['footer']['type'] = "box";
         $arrayPostData['messages'][0]['contents']['footer']['layout'] = "vertical";
-        $arrayPostData['messages'][0]['contents']['footer']['contents']['type'] = "text";
-        $arrayPostData['messages'][0]['contents']['footer']['contents']['text'] = "footer";
+        $arrayPostData['messages'][0]['contents']['footer']['contents'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['contents']['footer']['contents'][0]['text'] = "footer";
 
 
 
