@@ -21,12 +21,72 @@
         $arrayPostData['messages'][0]['type'] = "flex";
         $arrayPostData['messages'][0]['altText'] = "This is a Flex Message";
         $arrayPostData['messages'][0]['contents']['type'] = "bubble";
+
+        $arrayPostData['messages'][0]['contents']['header']['type'] = "box";
+        $arrayPostData['messages'][0]['contents']['header']['layout'] = "vertical";
+        $arrayPostData['messages'][0]['contents']['header']['contents'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['contents']['header']['contents'][0]['text'] = "header";
+
+        $arrayPostData['messages'][0]['contents']['hero']['type'] = "image";
+        $arrayPostData['messages'][0]['contents']['hero']['url'] = "https://www.linefriends.com/img/img_sec.jpg";
+        $arrayPostData['messages'][0]['contents']['hero']['size']= "full";
+        $arrayPostData['messages'][0]['contents']['hero']['aspectRatio']= "2:1";
+
+
         $arrayPostData['messages'][0]['contents']['body']['type'] = "box";
         $arrayPostData['messages'][0]['contents']['body']['layout'] = "horizontal";
         $arrayPostData['messages'][0]['contents']['body']['contents'][0]['type'] = "text";
         $arrayPostData['messages'][0]['contents']['body']['contents'][0]['text'] = "Hello";
         $arrayPostData['messages'][0]['contents']['body']['contents'][1]['type'] = "text";
-        $arrayPostData['messages'][0]['contents']['body']['contents'][1]['text'] = "Hello";
+        $arrayPostData['messages'][0]['contents']['body']['contents'][1]['text'] = "World";
+
+
+//         {
+//   "type": "bubble",
+
+//   "header": {
+//     "type": "box",
+//     "layout": "vertical",
+//     "contents": [
+//       {
+//         "type": "text",
+//         "text": "header"
+//       }
+//     ]
+//   },
+//   "hero": {
+//     "type": "image",
+//     "url": "https://www.linefriends.com/img/img_sec.jpg",
+//     "size": "full",
+//     "aspectRatio": "2:1"
+//   },
+//   "body": {
+//     "type": "box",
+//     "layout": "vertical",
+//     "contents": [
+//       {
+//         "type": "text",
+//         "text": "body"
+//       },
+//       {
+//         "type": "text",
+//         "text": "body"
+//       }
+//     ]
+//   },
+//   "footer": {
+//     "type": "box",
+//     "layout": "vertical",
+//     "contents": [
+//       {
+//         "type": "text",
+//         "text": "footer"
+//       }
+//     ]
+//   }
+// }
+
+
         replyMsg($arrayHeader,$arrayPostData);
     } elseif($message == "right_1"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
