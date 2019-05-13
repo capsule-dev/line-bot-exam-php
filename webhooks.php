@@ -35,7 +35,7 @@
             {
               "type": "text",
               "text": "World!"
-            }'
+            }';
 
 
         $arrayPostData['messages'][0]['text'] = json_decode($jsonFlex);
