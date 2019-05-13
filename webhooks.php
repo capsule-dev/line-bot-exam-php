@@ -23,10 +23,10 @@
         $arrayPostData['messages'][0]['altText'] = "This is a Flex Message";
         $arrayPostData['messages'][0]['contents']['type'] = "bubble";
 
-        $arrayPostData['messages'][0]['contents']['header']['type'] = "box";
-        $arrayPostData['messages'][0]['contents']['header']['layout'] = "vertical";
-        $arrayPostData['messages'][0]['contents']['header']['contents'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['contents']['header']['contents'][0]['text'] = "header";
+        // $arrayPostData['messages'][0]['contents']['header']['type'] = "box";
+        // $arrayPostData['messages'][0]['contents']['header']['layout'] = "vertical";
+        // $arrayPostData['messages'][0]['contents']['header']['contents'][0]['type'] = "text";
+        // $arrayPostData['messages'][0]['contents']['header']['contents'][0]['text'] = "header";
 
         $arrayPostData['messages'][0]['contents']['hero']['type'] = "image";
         $arrayPostData['messages'][0]['contents']['hero']['url'] = "https://www.linefriends.com/img/img_sec.jpg";
@@ -36,10 +36,14 @@
 
         $arrayPostData['messages'][0]['contents']['body']['type'] = "box";
         $arrayPostData['messages'][0]['contents']['body']['layout'] = "vertical";
-        $arrayPostData['messages'][0]['contents']['body']['contents'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['contents']['body']['contents'][0]['text'] = "ฺBody";
-        $arrayPostData['messages'][0]['contents']['body']['contents'][1]['type'] = "text";
-        $arrayPostData['messages'][0]['contents']['body']['contents'][1]['text'] = "Body";
+
+        $arrayPostData['messages'][0]['contents']['body']['contents'][0]['type'] = "box";
+        $arrayPostData['messages'][0]['contents']['body']['contents'][0]['layout'] = "baseline";
+        $arrayPostData['messages'][0]['contents']['body']['contents'][0]['contents'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['contents']['body']['contents'][0]['contents'][0]['text'] = "Body";
+        $arrayPostData['messages'][0]['contents']['body']['contents'][0]['contents'][1]['type'] = "text";
+        $arrayPostData['messages'][0]['contents']['body']['contents'][0]['contents'][1]['text'] = "ssssss";
+
 
         $arrayPostData['messages'][0]['contents']['footer']['type'] = "box";
         $arrayPostData['messages'][0]['contents']['footer']['layout'] = "vertical";
